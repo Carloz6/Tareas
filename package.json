@@ -1,0 +1,21 @@
+{
+  "name": "tareasapp",
+  "version": "1.0.0",
+  "description": "A task management app. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "tareas",
+    "tasks"
+  ],
+  "author": "Carlos Z",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "mongodb": "^3.1.10"
+  }
+}
