@@ -58,4 +58,14 @@ router.put('/updateTask/:id', (req, res, next)=>{
     }
 });
 
+//find a task
+router.get('/findTask', (req, res, next) => {
+    db.tasks.find({
+        "$text": {
+            "$search": req.body.query
+        }
+    },(err, tasks) => {
+        err ? res.send(err) : res.json(tasks);
+    });
+});
 module.exports = router;

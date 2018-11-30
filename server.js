@@ -4,8 +4,9 @@ const bodyParser = require("body-parser");
 const mongojs = require('mongojs')
 const app = express();
 const port = process.env.PORT ||3000;
-const index = require('./routes/index');
-const api = require('./routes/api');
+
+var index = require('./routes/index');
+var api = require('./routes/api');
 
 //View Engine
 app.set('views', path.join(__dirname,'views'));
