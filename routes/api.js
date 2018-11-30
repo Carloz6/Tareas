@@ -19,13 +19,43 @@ router.get('/tarea/:id', (req, res, next)=>{
     });
 });
 
-//delete
-/*
-router.get('/borrar/:id', (req, res, next)=>{
-    const getId = mongojs.ObjectId(req.params.id);
-    db.tasks.delete({_id: getId}, (err, task) => {
+//Add new task
+router.post('/addTask', (req, res, next)=>{
+    const obj = req.body; //object received 
+    db.tasks.insert(obj, (err, task) => {
         err ? res.send(err) : res.json(task);
     });
-});*/
+});
+
+//Delete task
+router.delete('/borrarTask/:id', (req, res, next)=>{
+    const getId = mongojs.ObjectId(req.params.id);
+    db.tasks.remove({_id: getId}, (err, task) => {
+        err ? res.send(err) : res.json(task);
+    });
+});
+
+//Update task
+router.put('/updateTask/:id', (req, res, next)=>{
+    const obj = req.body; 
+    const updTask = {};
+
+    if(obj.completado){
+        updTask.completado = obj.completado; 
+    }
+    if(obj.name){
+        updTask.name = obj.name;
+    } 
+    if(!updTask){
+        res.status(400);
+        res.json({
+            "error" : "Datos Incorrectos"
+        });
+    } else {
+        const getId = mongojs.ObjectId(req.params.id);
+        db.tasks.update({_id: getId},{$set:obj},{}, (err, task) => {
+        err ? res.send(err) : res.json(task); });                   
+    }
+});
 
 module.exports = router;
