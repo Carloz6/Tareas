@@ -12,7 +12,7 @@ Para clonar el proyecto en tu terminal corre
 git clone https://github.com/Carloz6/Tareas.git
 ```
 
-## Iniciar a utilizar el poryecto
+## Iniciar a utilizar el proyecto
 
 Una vez clonado el proyecto, accede al directorio 
 
