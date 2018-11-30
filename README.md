@@ -4,7 +4,7 @@ Es una manegador de tareas, en el que se pueden ver las tareas agreagadas, de ig
 
 ## Para comenzar
 
-Es necesario contar con NodeJS instalado, de no ser a si puedes ir a la pagina de * [NodeJS](https://nodejs.org/en/) 
+Es necesario contar con NodeJS instalado, de no ser a si puedes ir a la pagina de [NodeJS](https://nodejs.org/en/) 
 
 Para clonar el proyecto en tu terminal corre
 
